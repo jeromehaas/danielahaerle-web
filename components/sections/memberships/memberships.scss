@@ -1,257 +1,144 @@
 .memberships {
 
-	&__inner {
-		display: grid;
-		grid-template: auto / 500px auto;
-		grid-column-gap: 120px;
-		grid-template-areas:
+  &__inner {
+    display: grid;
+    grid-template: auto / 500px auto;
+    grid-column-gap: 120px;
+    grid-template-areas:
 			"text logos";
-		background-color: $lightblue-10;
-		padding: 112px;
-		margin: 0 auto;
-		clip-path: inset(0 48px round 20px);
-		transition: all 0.3s ease;
-		
-		&:hover {
-			clip-path: inset(0);
-		}
+    background-color: $lightblue-10;
+    padding: 112px;
+    margin: 0 auto;
+    clip-path: inset(0 48px round 20px);
+    transition: all 0.3s ease;
 
-	}
+    &:hover {
+      clip-path: inset(0);
+    }
 
+  }
 
-	&__text-wrapper {
-		grid-area: text;
-		align-self: center;
-	}
+  &__text-wrapper {
+    grid-area: text;
+    align-self: center;
+  }
 
-	&__title {
-		margin-bottom: 24px;
-	}
+  &__title {
+    margin-bottom: 24px;
+  }
 
-	&__logo-wrapper {
-		grid-area: logos;
-		display: grid;
-		grid-template: auto auto auto / auto auto;
-		grid-row-gap: 24px;
-		grid-template-areas: 
-			"button-1 button-2"
-			"button-3 button-3"
-			"button-4 button-5";
-		grid-column-gap: 48px;
-	}
+  &__logo-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 24px;
+    grid-column-gap: 48px;
+    align-items: stretch;
+  }
 
-	&__logo {
-		width: 100%;
-		height: 100%;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px;
+    background-color: white;
+    height: 120px;
 
-		img {
-			object-fit: contain;
-			width: 100%;
-			height: 100%;
-		}
+    .image {
+      height: 100%;
+    }
 
-		&--1 { 
-			grid-area: button-1; width: 75%; justify-self: end;  max-width: 200px; align-self: center; 
-		}
-		
-		&--2 { 
-			grid-area: button-2; width: 75%; justify-self: end;  max-width: 300px;
-		}
-		
-		&--3 { 
-			grid-area: button-3; width: 75%; justify-self: center; max-width: 300px; grid-column: span 2; margin-right: -100px;  
-		}
-		
-		&--4 { 
-			grid-area: button-4; width: 75%; justify-self: end;  max-width: 350px; 
-		}
-		
-		&--5 { 
-			grid-area: button-5; width: 75%; justify-self: end;  max-width: 250px;
-		}
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      max-width: 100%;
+		max-height: 120px;
+    }
 
-	}
+    &--high {
+      grid-row: span 1;
+    }
 
-	@media (max-width: 1450px) {
+  }
 
-		&__inner {
-			grid-template: auto / 350px auto;
-			grid-template-areas:
+  @media (max-width: 1450px) {
+
+    &__inner {
+      grid-template: auto / 350px auto;
+      grid-template-areas:
 			"text logos";
-		}
+    }
 
-		&__logo-wrapper {
-			grid-row-gap: 24px;
-			grid-column-gap: 24px;
-		}
+    &__logo-wrapper {
+      grid-row-gap: 24px;
+      grid-column-gap: 24px;
+    }
 
-		&__logo {
+  }
 
-			img {
-				object-fit: contain;
-			}
-	
-			&--1 { 
-				width: 75%; justify-self: end; 
-			}
+  @media (max-width: 1200px) {
 
-			&--2 { 
-				width: 100%; justify-self: end; 
-			}
-
-			&--3 { 
-				width: 100%; justify-self: center; 
-			}
-
-			&--4 { 
-				width: 75%; justify-self: end; 
-			}
-
-			&--5 { 
-				width: 75%; justify-self: end; 
-			}
-	
-		}
-
-	}
-
-	@media (max-width: 1200px) {
-
-		&__inner {
-			grid-template: auto / auto;
-			grid-template-areas:
+    &__inner {
+      grid-template: auto / auto;
+      grid-template-areas:
 				"text"
 				"logos";
-			grid-row-gap: 80px;
-			padding: 80px;
-			margin: 0;
-		}
+      grid-row-gap: 80px;
+      padding: 80px;
+      margin: 0;
+    }
 
-		&__logo-wrapper {
-			grid-row-gap: 24px;
-			grid-column-gap: 24px;
-		}
+    &__logo-wrapper {
+      grid-row-gap: 24px;
+      grid-column-gap: 24px;
+    }
 
-		&__logo {
+  }
 
-			img {
-				object-fit: contain;
-			}
-	
-			&--1 {
-				width: 50%; justify-self: center; 
-			}
+  @media (max-width: 850px) {
 
-			&--2 {
-				width: 75%; justify-self: center; 
-			}
-
-			&--3 {
-				width: 75%; justify-self: center; 
-			}
-
-			&--4 {
-				width: 75%; justify-self: center; 
-			}
-
-		}
-
-	}
-
-	@media (max-width: 850px) {
-
-		&__inner {
-			grid-template: auto / auto;
-			grid-template-areas:
+    &__inner {
+      grid-template: auto / auto;
+      grid-template-areas:
 				"text"
 				"logos";
-			grid-row-gap: 80px;	
-			padding: 48px !important;
-			clip-path: inset(0 24px round 20px);
-		}
+      grid-row-gap: 80px;
+      padding: 48px !important;
+      clip-path: inset(0 24px round 20px);
+    }
 
-		&__logo-wrapper {
-			grid-row-gap: 24px;
-			grid-column-gap: 80px;
-		}
+    &__logo-wrapper {
+      grid-row-gap: 24px;
+      grid-column-gap: 24px;
+    }
 
-		&__logo {
+  }
 
-			img {
-				object-fit: contain;
-			}
-	
-			&--1 { 
-				width: 100%; justify-self: center; 
-			}
+  @media (max-width: 600px) {
 
-			&--2 { 
-				width: 100% 
-			}
+    &__inner {
+      grid-row-gap: 40px;
+    }
 
-			&--3 { 
-				width: 50% 
-			}
+    &__logo-wrapper {
+      grid-row-gap: 24px;
+      grid-column-gap: 24px;
+		grid-template-columns: 1fr;
+    }
 
-			&--4 { 
-				width: 100%; justify-self: end; 
-			}
+  }
 
-			&--5 { 
-				width: 100%; justify-self: end; 
-			}
+  @media (max-width: 350px) {
 
-		}
+    &__inner {
+      grid-row-gap: 0;
+    }
 
-	}
+    &__logo-wrapper {
+      display: none;
+    }
 
-	@media (max-width: 600px) {
-
-		&__inner {
-			grid-row-gap: 40px;
-		}
-
-		&__logo-wrapper {
-			grid-row-gap: 24px;
-			grid-column-gap: 48px;
-		}
-		
-		&__logo {
-	
-			&--1 {
-				width: 100%; justify-self: center; 
-			}
-
-			&--2 {
-				width: 100% 
-			}
-
-			&--3 {
-				width: 50%; margin-right: 0; 
-			}
-
-			&--4 {
-				width: 100%; justify-self: end; 
-			}
-
-			&--5 {
-				width: 100%; justify-self: end; 
-			}
-
-		}
-
-	}
-
-	@media (max-width: 350px) {
-
-		&__inner {
-			grid-row-gap: 0;
-		}
-
-		&__logo-wrapper {
-			display: none;
-		}
-
-	}
+  }
 
 }
